@@ -1,0 +1,19 @@
+# rails app example
+#
+# /var/www/foo
+#
+
+server {
+    listen              80;
+    server_name         localhost;
+
+    root                /var/www/foo/public;
+    access_log          /var/log/nginx/foo.access.log main;
+
+    passenger_enabled   on;
+    rails_spawn_method  smart-lv2;
+    rack_env            production;
+    passenger_user      sdbunt;
+}
+
+#passenger_pre_start     http://domain.name;
