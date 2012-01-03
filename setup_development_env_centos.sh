@@ -7,5 +7,6 @@ yum -y install  \
         autoconf zlib-devel readline-devel \
         openssl-devel mysql-server mysql \
         mysql-devel pcre-devel libxslt-devel \
-	libevent-devel
+        libevent-devel \
+        ImageMagick-devel
 
