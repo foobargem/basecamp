@@ -6,15 +6,11 @@ RUBY_BUILD_REPOSITORY="git://github.com/sstephenson/ruby-build.git"
 PROFILE_PATH=$HOME/.bashrc
 RUBY_VERSION=1.9.3-p0
 
-#if [ ! -f $PROFILE_PATH ]; then
-#  echo " $PROFILE_PATH does not exist."
-#  exit 1
-#fi
 
-
-
-# ToDo: git command checking
-
+# init .bash_profile
+echo >> $PROFILE_PATH
+echo '# load .bashrc' >> $PROFILE_PATH
+echo '[[ -f "$HOME/.bashrc" ]] && source $HOME/.bashrc' >> $PROFILE_PATH
 
 
 #-----------------------
@@ -25,16 +21,18 @@ cd $HOME
 git clone $RBENV_REPOSITORY .rbenv
 
 if [[ ! $PATH =~ '.rbenvs' ]]; then
+  echo >> $PROFILE_PATH
   echo 'export PATH=$HOME/.rbenv/bin:$PATH' >> $PROFILE_PATH
-  export PATH=$HOME/.rbenv/bin:$PATH
 fi
 
 grep 'eval "$(rbenv init -)"' $PROFILE_PATH
 if [ $? == "1" ]; then
+  echo >> $PROFILE_PATH
+  echo '# rbenv' >> $PROFILE_PATH
   echo 'eval "$(rbenv init -)"' >> $PROFILE_PATH
-  eval "$(rbenv init -)"
 fi
 
+source $PROFILE_FILE
 
 
 #-----------------------
