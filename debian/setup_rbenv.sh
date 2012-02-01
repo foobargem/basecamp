@@ -33,7 +33,8 @@ if [ $? == "1" ]; then
   echo 'eval "$(rbenv init -)"' >> $PROFILE_PATH
 fi
 
-source $PROFILE_PATH
+#exec $PROFILE_PATH
+exec $SHELL
 
 
 #-----------------------
