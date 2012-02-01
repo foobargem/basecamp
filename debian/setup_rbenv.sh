@@ -3,7 +3,7 @@
 RBENV_REPOSITORY="git://github.com/sstephenson/rbenv.git"
 RUBY_BUILD_REPOSITORY="git://github.com/sstephenson/ruby-build.git"
 
-PROFILE_PATH=$HOME/.bashrc
+PROFILE_PATH=$HOME/.bash_profile
 RUBY_VERSION=1.9.3-p0
 
 
