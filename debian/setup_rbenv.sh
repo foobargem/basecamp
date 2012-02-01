@@ -29,7 +29,7 @@ if [[ ! $PATH =~ '.rbenvs' ]]; then
 fi
 
 grep 'eval "$(rbenv init -)"' $PROFILE_PATH
-if [ $? != "1" ]; then
+if [ $? == "1" ]; then
   echo 'eval "$(rbenv init -)"' >> $PROFILE_PATH
 fi
 
@@ -40,7 +40,7 @@ source $PROFILE_PATH
 # install ruby-build
 #-----------------------
 git clone $RUBY_BUILD_REPOSITORY /tmp/ruby-build
-sudo ./tmp/ruby-build/install.sh
+sudo /tmp/ruby-build/install.sh
 rm -rf /tmp/ruby-build
 
 
