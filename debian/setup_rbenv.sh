@@ -3,27 +3,13 @@
 RBENV_REPOSITORY="git://github.com/sstephenson/rbenv.git"
 RUBY_BUILD_REPOSITORY="git://github.com/sstephenson/ruby-build.git"
 
-usage() {
-  echo
-  echo " usage: setup_rbenv.sh <profile_file_name>"
-  echo "  ex) ./setup_rbenv.sh .bash_profile"
-  echo
-  exit 1
-}
+PROFILE_PATH=$HOME/.bashrc
+RUBY_VERSION=1.9.3-p0
 
-
-if [ $# -lt 2 ]; then
-  usage
-else
-  PROFILE_PATH=$1
-  #RUBY_VERSION=${2:-"1.9.3-p0"}
-  RUBY_VERSION=$2
-fi
-
-if [ ! -f $PROFILE_PATH ]; then
-  echo " $PROFILE_PATH does not exist."
-  exit 1
-fi
+#if [ ! -f $PROFILE_PATH ]; then
+#  echo " $PROFILE_PATH does not exist."
+#  exit 1
+#fi
 
 
 
