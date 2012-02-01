@@ -39,9 +39,10 @@ source $PROFILE_PATH
 # install ruby-build
 #-----------------------
 git clone $RUBY_BUILD_REPOSITORY /tmp/ruby-build
-sudo /tmp/ruby-build/install.sh
+cd /tmp/ruby-build
+sudo ./install.sh
 rm -rf /tmp/ruby-build
-
+cd -
 
 #-----------------------
 # install ruby
