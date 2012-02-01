@@ -1,6 +1,17 @@
 Base Camp
 
-It is server setting scripts for centos at Oxygen Computing Inc.
+It is server setting scripts at OxygenComputing Inc.
+
+
+== Debian
+
+* install rbenv 
+$ bash < <(curl "https://raw.github.com/eunchul/basecamp/master/debian/setup_rbenv.sh")
+
+$ gem install rails
+$ gem install passenger
+...
+
 
 == CentOS
 
