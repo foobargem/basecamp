@@ -26,15 +26,15 @@ git clone $RBENV_REPOSITORY .rbenv
 
 if [[ ! $PATH =~ '.rbenvs' ]]; then
   echo 'export PATH=$HOME/.rbenv/bin:$PATH' >> $PROFILE_PATH
+  export PATH=$HOME/.rbenv/bin:$PATH
 fi
 
 grep 'eval "$(rbenv init -)"' $PROFILE_PATH
 if [ $? == "1" ]; then
   echo 'eval "$(rbenv init -)"' >> $PROFILE_PATH
+  eval "$(rbenv init -)"
 fi
 
-#exec $PROFILE_PATH
-exec $SHELL
 
 
 #-----------------------
