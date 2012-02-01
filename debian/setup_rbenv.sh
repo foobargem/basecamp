@@ -17,6 +17,9 @@ RUBY_VERSION=1.9.3-p0
 
 
 
+#-----------------------
+# install rbenv
+#-----------------------
 cd $HOME
 
 git clone $RBENV_REPOSITORY .rbenv
@@ -33,19 +36,17 @@ fi
 source $PROFILE_PATH
 
 
+#-----------------------
 # install ruby-build
-cd /tmp
-git clone $RUBY_BUILD_REPOSITORY
-
-cd /tmp/ruby-build
-sudo ./install
-
-cd $HOME
+#-----------------------
+git clone $RUBY_BUILD_REPOSITORY /tmp/ruby-build
+sudo ./tmp/ruby-build/install.sh
 rm -rf /tmp/ruby-build
 
 
+#-----------------------
 # install ruby
-
+#-----------------------
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
 rbenv rehash
